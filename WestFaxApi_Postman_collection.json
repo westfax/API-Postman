@@ -1,0 +1,1413 @@
+{
+	"info": {
+		"_postman_id": "90e04784-88cc-41e7-a6ec-7f1cd705d150",
+		"name": "Polka.API",
+		"description": "The API for automating fax servcies.\n\nIncludes new V2 features for FaxForward product.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Security_Ping",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "StringParams1",
+							"value": "ping ",
+							"type": "text",
+							"description": "string to have \"Pong - \" attached to and returned"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Security_Ping/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Security_Ping",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "This returns your string with \"Pong - \" attached to the beginning."
+			},
+			"response": []
+		},
+		{
+			"name": "Security_Authenticate (Usename, Pass only)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Security_Authenticate/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Security_Authenticate",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Authenticate Method (User and Password Only)"
+			},
+			"response": []
+		},
+		{
+			"name": "Security_Authenticate (Usename, Pass only) Throws error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Security_Authenticate/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Security_Authenticate",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Authenticate Method (User and Password Only) Throws error"
+			},
+			"response": []
+		},
+		{
+			"name": "Security_Authenticate (Usename, Pass, ProductId)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Security_Authenticate/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Security_Authenticate",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Authenticate Method (User, Password, and ProductId)"
+			},
+			"response": []
+		},
+		{
+			"name": "Profile_GetAccountInfo- Works for any product type",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "(optional) Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Profile_GetAccountInfo/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Profile_GetAccountInfo",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Gets the current account details for the person indicated in the login credentials.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Profile_GetProductList - All Prods",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Profile_GetProductList/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Profile_GetProductList",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Gets all of the products that the user has access to.\n\nThe Product Id is important in that most API functions take a Product Id.\n\nThis call will return both FaxForward and Brooadcast Fax Products.  \n\nNot much detail is returned here.  But you have the Id that can be used in"
+			},
+			"response": []
+		},
+		{
+			"name": "Profile_GetF2EProductList - Fax to Email only",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Profile_GetF2EProductList/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Profile_GetF2EProductList",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Gets the Fax to Email Products that the user has access to.\n\nThe Product Id is important in that most API functions take a Product Id.\n\nThis call will return only Fax to Email Products, and has more detail than the GetProductList() API call."
+			},
+			"response": []
+		},
+		{
+			"name": "Profile_GetF2EProductDetail - Fax to Email only",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Profile_GetF2EProductDetail/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Profile_GetF2EProductDetail",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Gets the detail for the indicated Fax to Email product."
+			},
+			"response": []
+		},
+		{
+			"name": "Security_GetUserInfo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "(optional) Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Security_GetUserInfo/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Security_GetUserInfo",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Gets the user's information."
+			},
+			"response": []
+		},
+		{
+			"name": "Security_GetLoginInfo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Security_GetLoginInfo/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Security_GetLoginInfo",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Gets the user's information and logins."
+			},
+			"response": []
+		},
+		{
+			"name": "Contact_GetContactList - Works for any product type",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"sessionValue": "{{ProdId}}",
+							"description": "(optional) Guid Ex. 12345678-1234-1234-1234-123456789abc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Contact_GetContactList/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Contact_GetContactList",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Gets the current contact details for the person indicated in the login credentials.\n\nProductId is optional.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_SendFax",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "ContentType",
+						"value": "multipart/form-data"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "JobName",
+							"value": "Test Job",
+							"description": "The Name of the Job",
+							"type": "text"
+						},
+						{
+							"key": "Header",
+							"value": "Test Header",
+							"description": "The string to print at the top of the fax.",
+							"type": "text"
+						},
+						{
+							"key": "BillingCode",
+							"value": "Customer Code 1234",
+							"description": "Customer Billing Code",
+							"type": "text"
+						},
+						{
+							"key": "Numbers1",
+							"value": "823-555-0111",
+							"description": "Destination Fax Number (1)",
+							"type": "text"
+						},
+						{
+							"key": "Numbers2",
+							"value": "3035550101",
+							"description": "Destination Fax Number (2)",
+							"type": "text"
+						},
+						{
+							"key": "Files0",
+							"description": "The Fax file to send.",
+							"type": "file",
+							"src": null,
+							"value": ""
+						},
+						{
+							"key": "CSID",
+							"value": "3035550101",
+							"description": "(Optional) The CSID to send.  This is usually the Fax Number.",
+							"type": "text"
+						},
+						{
+							"key": "ANI",
+							"value": "0000000000",
+							"description": "(Optional) The Callers Phone number.  This is usually the fax number.",
+							"type": "text"
+						},
+						{
+							"key": "StartDate",
+							"value": "1/1/2019",
+							"description": "(Optional) The time to start the job.",
+							"type": "text"
+						},
+						{
+							"key": "FaxQuality",
+							"value": "Fine",
+							"description": "(Optional) The Fax Quality.  Fine or Normal.",
+							"type": "text"
+						},
+						{
+							"key": "FeedbackEmail",
+							"value": "(your email here)",
+							"description": "(Optional) Send a report here when the job is done.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_SendFax/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_SendFax",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Method to send a fax.  \n\nMany Parameters here."
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_GetOutboundFaxIdentifiers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "StartDate",
+							"value": "1/1/2019",
+							"type": "text",
+							"description": "Farthest date in the past to get fax Ids - most date time formats will work here"
+						},
+						{
+							"key": "FaxDirection",
+							"value": "Outbound",
+							"type": "text",
+							"description": "Faxes you sent to another fax number"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_GetFaxIdentifiers/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_GetFaxIdentifiers",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Retrieves only the list of outbound Fax Ids for the given product.\n\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_GetOutboundFaxDescriptions",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "52726cb9-8f66-42fd-8a86-b9eb7ff72f08",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "StartDate",
+							"value": "1/1/19",
+							"type": "text",
+							"description": "Farthest date in the past to get fax Ids - most date time formats will work here"
+						},
+						{
+							"key": "FaxDirection",
+							"value": "Outbound",
+							"type": "text",
+							"description": "Faxes you sent to another fax number"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_GetFaxDescriptions/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_GetFaxDescriptions",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Retrieves detailed information about the requested outbound fax identifiers."
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_GetInboundFaxIdentifiers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "StartDate",
+							"value": "1/1/2019",
+							"type": "text",
+							"description": "Farthest date in the past to get fax Ids - most date time formats will work here"
+						},
+						{
+							"key": "FaxDirection",
+							"value": "Inbound",
+							"type": "text",
+							"description": "Faxes sent to your fax number"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_GetFaxIdentifiers/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_GetFaxIdentifiers",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Retrieves only the list of inbound Fax Ids for the given product.\n\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_GetInboundFaxDescriptions",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ce71f13b-85ad-4a33-976e-f75564bf71bd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "StartDate",
+							"value": "1/1/19",
+							"type": "text",
+							"description": "Farthest date in the past to get fax Ids - most date time formats will work here"
+						},
+						{
+							"key": "FaxDirection",
+							"value": "Inbound",
+							"type": "text",
+							"description": "Faxes sent to your fax number"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_GetFaxDescriptions/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_GetFaxDescriptions",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Retrieves detailed information about the requested inbound fax identifiers."
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_GetFaxDocuments",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e67168bf-35a9-4170-8d3f-08ce6daa0685",
+						"type": "text/javascript",
+						"exec": [
+							"var id1 = {",
+							"            \"Id\": \"24749324-0add-4d23-9087-ab34cd56ef78\",",
+							"            \"Direction\": \"Inbound\",",
+							"            \"Date\": \"2018-09-04T03:28:04Z\",",
+							"            \"Tag\": \"None\"",
+							"        };",
+							"",
+							"pm.environment.set(\"FaxIds1\", JSON.stringify(id1));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "FaxIds1",
+							"value": "{{FaxIds1}}",
+							"type": "text",
+							"description": "Id of fax received from GetFaxIdentifiers - look at Pre-request Script Tab"
+						},
+						{
+							"key": "Format",
+							"value": "pdf",
+							"type": "text",
+							"description": "can be pdf, tiff, jpeg, png, or gif"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_GetFaxDocuments/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_GetFaxDocuments",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Retrieves the fax documents for the given fax Ids.\n\nThe Format Parameter supports:\n\npdf,\ntiff,\njpeg,\npng,\ngif"
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_ChangeFaxFilterValue",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "246335f5-d814-4775-bd51-64a03f46e11e",
+						"type": "text/javascript",
+						"exec": [
+							"var id1 = {",
+							"    \"Id\": \"24749324-0add-4d23-9087-ab34cd56ef78\"",
+							"};",
+							"",
+							"pm.environment.set(\"FaxIds1\", JSON.stringify(id1));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"sessionValue": "{{User}}",
+							"description": "string username",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"sessionValue": "{{Pass}}",
+							"description": "string password",
+							"type": "text"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"sessionValue": "{{ProdId}}",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc",
+							"type": "text"
+						},
+						{
+							"key": "FaxIds1",
+							"value": "{{FaxIds1}}",
+							"type": "text",
+							"description": "Id of fax received from GetFaxIdentifiers - look at Pre-request Script Tab"
+						},
+						{
+							"key": "Filter",
+							"value": "Removed",
+							"type": "text",
+							"description": "Can be None (reset - marked as unread), Retrieved (Marked as Read), Removed (Deleted)"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_ChangeFaxFilterValue/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_ChangeFaxFilterValue",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Changes the filter value of the Fax(s) identified.\n\nFilter Values can be:\n\nNone (reset - marked as unread),\nRetrieved (Marked as Read),\nRemoved (Deleted)\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_GetFaxIdentifiers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "StartDate",
+							"value": "12/1/2017",
+							"type": "text",
+							"description": "Farthest date in the past to get fax Ids - most date time formats will work here"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_GetFaxIdentifiers/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_GetFaxIdentifiers",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Retrieves the list of Fax Ids for the given product.  This returns a very \"thin\" list meaning there is not much inforamtion.  \n\nThe returned information contains the Guid (Id) of the fax, whether the fax was inbound or outbound, and the date of the fax.\n\nThe Tag value indicates whether the fax has been downloaded or not.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_GetFaxDescriptionsUsingIds",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5f98bae0-4d38-4b02-8aa6-7f53aec906e8",
+						"type": "text/javascript",
+						"exec": [
+							"var id1 = {",
+							"                    \"Id\": \"24749324-0add-4d23-9087-ab34cd56ef78\",",
+							"            \"Direction\": \"Inbound\",",
+							"            \"Date\": \"2018-09-04T03:28:04Z\",",
+							"            \"Tag\": \"None\"",
+							"        };",
+							"        ",
+							"var id2 =  {",
+							"\"Id\": \"24749324-0add-4d23-9087-ab34cd56ef78\",",
+							"            \"Direction\": \"Inbound\",",
+							"            \"Date\": \"2018-04-26T22:15:33Z\",",
+							"            \"Tag\": \"None\"",
+							"        };",
+							"",
+							"var id3 = {",
+							"          \"Id\": \"24749324-0add-4d23-9087-ab34cd56ef78\",",
+							"            \"Direction\": \"Outbound\",",
+							"            \"Date\": \"2018-04-23T04:58:18Z\",",
+							"            \"Tag\": \"Retrieved\"",
+							"};",
+							"",
+							"",
+							"",
+							"pm.environment.set(\"FaxIds1\", JSON.stringify(id1));",
+							"pm.environment.set(\"FaxIds2\", JSON.stringify(id2));",
+							"pm.environment.set(\"FaxIds3\", JSON.stringify(id3));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "FaxIds1",
+							"value": "{{FaxIds1}}",
+							"type": "text",
+							"description": "Id of fax received from GetFaxIdentifiers - look at Pre-request Script Tab"
+						},
+						{
+							"key": "FaxIds2",
+							"value": "{{FaxIds2}}",
+							"type": "text",
+							"description": "Id of fax received from GetFaxIdentifiers - look at Pre-request Script Tab"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_GetFaxDescriptionsUsingIds/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_GetFaxDescriptionsUsingIds",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Retrieves detailed information about the requested fax identifiers.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_ConvertToFaxDocument",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "ContentType",
+						"value": "multipart/form-data"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "Files0",
+							"description": "The Fax file to send.",
+							"type": "file",
+							"src": null,
+							"value": ""
+						},
+						{
+							"key": "FaxQuality",
+							"value": "Fine",
+							"description": "(Optional) The Fax Quality.  Fine or Normal.",
+							"type": "text"
+						},
+						{
+							"key": "Format",
+							"value": "png",
+							"sessionValue": "png",
+							"description": "can be pdf, tiff, jpeg, png, or gif",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_SendFax/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_SendFax",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Creates a Fax Tiff, and sends it back in the format you want.  \n\nMany Parameters here."
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_SendFaxAsEmail",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fefca35a-d9df-458a-9423-93efee17cac5",
+						"type": "text/javascript",
+						"exec": [
+							"var id1 = {",
+							"    \"Id\": \"24749324-0add-4d23-9087-ab34cd56ef78\",",
+							"    \"Direction\": \"Inbound\",",
+							"    \"Date\": \"2018-01-15T23:29:25Z\",",
+							"    \"Tag\": \"None\"",
+							"};",
+							"",
+							"pm.environment.set(\"FaxIds1\", JSON.stringify(id1));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "FaxIds1",
+							"value": "{{FaxIds1}}",
+							"type": "text",
+							"description": "Id of fax received from GetFaxIdentifiers - look at Pre-request Script Tab"
+						},
+						{
+							"key": "FeedbackEmail",
+							"value": "(your email here)",
+							"type": "text",
+							"description": "The email that the fax is sent to"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_SendFaxAsEmail/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_SendFaxAsEmail",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Sends the indicated Fax to the indicated email address."
+			},
+			"response": []
+		},
+		{
+			"name": "Fax_ResendFaxNotification",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "03d4f518-ce0b-44a8-b423-c00b8586bbaf",
+						"type": "text/javascript",
+						"exec": [
+							"var id1 = {",
+							"    \"Id\": \"24749324-0add-4d23-9087-ab34cd56ef78\",",
+							"    \"Direction\": \"Inbound\",",
+							"    \"Date\": \"2018-01-15T23:29:25Z\",",
+							"    \"Tag\": \"None\"",
+							"};",
+							"",
+							"pm.environment.set(\"FaxIds1\", JSON.stringify(id1));"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "{{User}}",
+							"type": "text",
+							"description": "string username"
+						},
+						{
+							"key": "Password",
+							"value": "{{Pass}}",
+							"type": "text",
+							"description": "string password"
+						},
+						{
+							"key": "Cookies",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "ProductId",
+							"value": "{{ProdId}}",
+							"type": "text",
+							"description": "Guid Ex. 12345678-1234-1234-1234-123456789abc"
+						},
+						{
+							"key": "FaxIds1",
+							"value": "{{FaxIds1}}",
+							"type": "text",
+							"description": "Id of fax received from GetFaxIdentifiers - look at Pre-request Script Tab"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Url}}/REST/Fax_ResendFaxNotification/{{RespEnc}}",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"REST",
+						"Fax_ResendFaxNotification",
+						"{{RespEnc}}"
+					]
+				},
+				"description": "Resends the Fax to Email email.\n\nThis is an inbound fax method only.  It causes re-delivery of the inbound fax or notification to all of the configured recipients."
+			},
+			"response": []
+		}
+	]
+}
