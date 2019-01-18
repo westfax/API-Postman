@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "90e04784-88cc-41e7-a6ec-7f1cd705d150",
-		"name": "Polka.API",
+		"name": "WestFax.API",
 		"description": "The API for automating fax servcies.\n\nIncludes new V2 features for FaxForward product.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
