@@ -584,6 +584,12 @@
 							"value": "(your email here)",
 							"description": "(Optional) Send a report here when the job is done.",
 							"type": "text"
+						},
+						{
+							"key": "CallBack",
+							"value": "[get]http://yourweburl.com/{@jobid}?prod={@prodid}&dir={@dir}",
+							"description": "(Optional) Web Callback URL. Prepend [post] to override default [get]",
+							"type": "text"
 						}
 					]
 				},
