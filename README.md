@@ -1,6 +1,6 @@
 # WestFax API Postman collection
 
-![WESTFAX](http://westfax.com/wp-content/uploads/2017/08/WestFax_Color_100x300-300x100.png)
+![WESTFAX](https://westfax.com/img/WestFax_Logo.webp)
 
 ### WestFax API
 
