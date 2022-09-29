@@ -40,4 +40,7 @@ Note: Certain API methods require resulting information from API methods run bef
 
 We recommend that you use the Postman tool with the SDK Demo since they mirror each other. We hope that the Postman collection along with the SDK Demo will get you underway with your integration quickly.  
 
+####About WestFax
+WestFax offers Enterprise [HIPAA Compliant Cloud Fax](https://westfax.com/hipaa-compliant-fax/) service through the WestFax online portal, our API and our mobile apps. We continue to innovate though Direct Message Protocol ready document capture, OCR and managed document workflow.
+
 
